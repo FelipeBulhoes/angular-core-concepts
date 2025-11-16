@@ -1,0 +1,26 @@
+<div class="userFocusContainer">
+  @if (addTaskVisible() && selectedUser()) {
+  <app-new-task (cancel)="toggleAddTask()" [selectedUser]="selectedUser()!" />
+  }
+
+  <div class="userHeader">
+    <div class="userInfo">
+      <img class="userImg" [src]="imagePath()" alt="" />
+      <h1>{{ selectedUser()?.name }}</h1>
+    </div>
+
+    <div class="addTaskContainer">
+      <button (click)="toggleAddTask()">Add task</button>
+    </div>
+  </div>
+
+  @if (selectedUser()) {
+  <div>
+    <ul class="taskList">
+      @for (task of getSelectedUserTasks(); track task.id) {
+      <app-task [task]="task" />
+      }
+    </ul>
+  </div>
+  }
+</div>

@@ -1,0 +1,6 @@
+<li>
+  <Button (click)="onUserClick()" [class.active]="selected()">
+    <img [src]="imagePath()" alt="" />
+    <span>{{ user().name }}</span>
+  </Button>
+</li>

@@ -1,0 +1,10 @@
+<li>
+  <div class="taskItem">
+    <h2>{{ task().title }}</h2>
+    <p>{{ task().description }}</p>
+
+    <div class="taskActions">
+      <button (click)="onCompleteClick()">Mark as Complete</button>
+    </div>
+  </div>
+</li>
